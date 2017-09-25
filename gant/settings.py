@@ -21,6 +21,12 @@ HTTPCACHE_EXPIRATION_SECS = 4233600 # =1 week
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.LeveldbCacheStorage'
 HTTPCACHE_POLICY = 'scrapy.extensions.httpcache.RFC2616Policy'
 
+# Item pipelines
+ITEM_PIPELINES = {
+    'gant.pipelines.JsonWriterPipeline': 300,
+    }
+
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'gant (+http://www.yourdomain.com)'
@@ -69,11 +75,6 @@ DOWNLOAD_DELAY = 3
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
-# Configure item pipelines
-# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gant.pipelines.GantPipeline': 300,
-#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -1,11 +1,10 @@
 
 # extensions to ignore
 *.pyc
+*.jl
+*.json
 
 # folders to ignore
 __pycache__
 .idea
 .scrapy
-
-# files to ignore
-test.json
