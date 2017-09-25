@@ -19,7 +19,7 @@ class GantItem(Item):
     category = Field()
     sub_category = Field()
     third_category = Field()
-    meta = Field()
+    timestamp = Field()
     sex = Field()
     main_title = Field()
     description = Field()
@@ -30,6 +30,7 @@ class GantItem(Item):
 class GantColor(Item):
     """Gant color-specific fields"""
     ref = Field()
+    url = Field()
     color = Field()
     images = Field()
     price_hierarchy = Field()

@@ -10,7 +10,7 @@ import datetime
 class GantSpider(CrawlSpider):
     name = 'gant'
     allowed_domains = ['gant.com', 'gant.se', 'gant.co.uk', 'gant.fr', 'gant.de']
-    start_urls = ['http://www.gant.com']
+    start_urls = ['http://fr.gant.com', 'http://www.gant.com']
 
     # define rules for vertical & horizontal crawling
     rules = (
@@ -32,7 +32,7 @@ class GantSpider(CrawlSpider):
         loader.add_value('category', response.url.split("/")[3].split("-",1)[1])
         loader.add_value('sub_category', '')
         loader.add_value('third_category', '')
-        loader.add_value('meta', datetime.datetime.utcnow().isoformat())
+        loader.add_value('timestamp', datetime.datetime.utcnow().isoformat())
         loader.add_value('sex', response.url.split("/")[3].split("-")[0])
         loader.add_xpath('ref', '//*[@class = "style-code gant-typog-h4"]/text()')
         loader.add_xpath('main_title', '//*[@itemprop="name"]//text()')
@@ -49,7 +49,7 @@ class GantSpider(CrawlSpider):
         # loop through color-urls and parse color-specific pages
         color_urls = response.xpath(xpath_color_urls).extract()
         for color_url in color_urls:
-            request = Request(color_url, callback=self.parse_color, dont_filter=True)
+            request = Request(color_url, callback=self.parse_color)
             yield request
 
 

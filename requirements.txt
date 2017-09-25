@@ -8,6 +8,7 @@ cssselect==1.0.1
 hyperlink==17.3.1
 idna==2.6
 incremental==17.5.0
+leveldb==0.194
 lxml==4.0.0
 parsel==1.2.0
 pyasn1==0.3.5
