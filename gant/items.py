@@ -25,7 +25,8 @@ class GantItem(Item):
     description = Field()
     colors = Field()
     material = Field()
-    color_urls = Field()    
+    color_urls = Field()
+    details = Field()
 
 class GantColor(Item):
     """Gant color-specific fields"""

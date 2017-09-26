@@ -23,7 +23,8 @@ HTTPCACHE_POLICY = 'scrapy.extensions.httpcache.RFC2616Policy'
 
 # Item pipelines
 ITEM_PIPELINES = {
-    'gant.pipelines.JsonWriterPipeline': 300,
+    'gant.pipelines.JsonWriterPipeline': 800,
+    'gant.pipelines.MergeJsonWriterPipeline': 900
     }
 
 
